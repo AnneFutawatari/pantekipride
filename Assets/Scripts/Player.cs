@@ -7,6 +7,10 @@ public class Player : MonoBehaviour
 	public float speed = 5.0f;
 	public float slideSpped = 2.0f;
 
+	public int jumpCount = 1;
+
+	int defaultJumpCount;
+
 	//アニメーション
 	Animator animator;
 	//UIを管理するスクリプト
@@ -21,6 +25,8 @@ public class Player : MonoBehaviour
 		animator = GetComponent<Animator>();
 		uiscript = GameObject.Find("Canvas").GetComponent<UIManager>();
 		rig = GetComponent<Rigidbody>();
+
+		defaultJumpCount = jumpCount;
 	}
 
 
@@ -63,7 +69,16 @@ public class Player : MonoBehaviour
 		bool isSlide = stateInfo.IsName("Base Layer.Slide");
 
 		//ジャンプ
+		if (Input.GetKeyDown(KeyCode.UpArrow) && jumpCount > 0)
+        {
+			rig.velocity = new Vector3(0, 0, 0);
 
+			rig.AddForce(new Vector3(0, 6, 0), ForceMode.Impulse);
+
+			animator.SetTrigger("Jump");
+
+			jumpCount--;
+        }
 
 		//スライディングしていたら頭の判定をなくす
 		
@@ -103,15 +118,20 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "DustBox")
         {
-			animator.SetBool("Dead", true);
-			uiscript.Gameover();
 
 			speed = 0;
 			slideSpped = 0;
+
+			animator.SetBool("Dead", true);
+			uiscript.Gameover();
+
+        }
+
+		if (collision.gameObject.tag == "Ground")
+        {
+			jumpCount = defaultJumpCount;
         }
     }
-
-
-    //Triggerでない障害物にぶつかったとき
+    
 
 }

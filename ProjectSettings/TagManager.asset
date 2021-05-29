@@ -8,6 +8,10 @@ TagManager:
   - Goal
   - DustBox
   - Point
+  - PointCube1
+  - PointCube2
+  - PointCube3
+  - Jam
   layers:
   - Default
   - TransparentFX
