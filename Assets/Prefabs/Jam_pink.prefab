@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7913516744162878230}
   - component: {fileID: -2317338126826289899}
   m_Layer: 0
-  m_Name: Jam_blue
+  m_Name: Jam_pink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f3c5198979b01467885dd108f7542d80, type: 2}
+  - {fileID: 2100000, guid: d0c5cd50f9826494b8d990147efb835f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

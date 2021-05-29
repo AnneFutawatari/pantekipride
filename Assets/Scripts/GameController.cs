@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject jam;
+    public GameObject[] jam;
 
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(jam, new Vector3(0, 10, 0), Quaternion.identity);
+        //Instantiate(jam, new Vector3(0, 10, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        int color = Random.Range(0, 5);
+        Instantiate(jam[color], new Vector3(0, 10, 0), Quaternion.identity);
     }
 }
