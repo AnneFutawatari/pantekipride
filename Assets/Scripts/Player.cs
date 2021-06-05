@@ -4,7 +4,11 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-	public float speed = 5.0f;
+
+	bool running;
+	float speed;
+	private float count;
+	public float playerSpeed = 5.0f;
 	public float slideSpped = 2.0f;
 
 	public int jumpCount = 1;
@@ -18,9 +22,10 @@ public class Player : MonoBehaviour
 
 	Rigidbody rig;
 
-
-	void Start()
+    void Start()
 	{
+		running = true;
+
 		//変数に必要なデータを格納
 		animator = GetComponent<Animator>();
 		uiscript = GameObject.Find("Canvas").GetComponent<UIManager>();
@@ -34,7 +39,7 @@ public class Player : MonoBehaviour
 	void Update()
 	{
 		//前に進む
-		transform.position += new Vector3(0, 0, speed) * Time.deltaTime;
+		transform.position += new Vector3(0, 0, playerSpeed) * Time.deltaTime;
 
 		//現在のX軸の位置を取得
 		float pos_x = transform.position.x;
@@ -84,9 +89,32 @@ public class Player : MonoBehaviour
 		
 
 		//落下時のGameOver判定
-		
 
+
+		//○秒後から速度UPする
+		if(running == true)
+        {
+			count += Time.deltaTime;
+			Debug.Log(count);
+			if(count >= 5)
+            {
+				count = 0;
+				running = false;
+				playerSpeed = 10f;
+
+				Invoke("SpeedModosu", 5);
+            }
+        }
+		else
+        {
+			count = 0;
+        }
 	}
+
+	void SpeedModosu()
+    {
+		speed = playerSpeed;
+    }
 
 	// Triggerである障害物にぶつかったとき
 	void OnTriggerEnter(Collider colider)

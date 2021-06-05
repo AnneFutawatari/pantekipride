@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
             Instantiate(jam[color], new Vector3(position, 10, 0), Quaternion.identity);
     }
 
-    void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
