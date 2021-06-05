@@ -39,9 +39,4 @@ public class UIManager : MonoBehaviour {
 	{
 		SceneManager.LoadScene("Title");
 	}
-
-	public void TitleStart()
-	{
-		SceneManager.LoadScene("Stage_1");
-	}
 }
