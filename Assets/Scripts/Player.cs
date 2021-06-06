@@ -95,8 +95,8 @@ public class Player : MonoBehaviour
 		if(running == true)
         {
 			count += Time.deltaTime;
-			Debug.Log(count);
-			if(count >= 5)
+			//Debug.Log(count);
+			if(count >= 3)
             {
 				count = 0;
 				running = false;

@@ -19,13 +19,4 @@ public class GameController : MonoBehaviour
             int color = Random.Range(0, 5);
             Instantiate(jam[color], new Vector3(position, 10, 0), Quaternion.identity);
     }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            Destroy(gameObject);
-        }
-    }
-
 }
