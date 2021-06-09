@@ -4,15 +4,12 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-
 	bool running;
 	float speed;
 	private float count;
-	public float playerSpeed = 5.0f;
-	public float slideSpeed = 2.0f;
-
+	public float playerSpeed = 25.0f;
+	public float slideSpeed = 25.0f;
 	public int jumpCount = 1;
-
 	int defaultJumpCount;
 
 	//アニメーション
@@ -34,8 +31,6 @@ public class Player : MonoBehaviour
 		defaultJumpCount = jumpCount;
 	}
 
-
-
 	void Update()
 	{
 		//前に進む
@@ -47,25 +42,20 @@ public class Player : MonoBehaviour
 		//右アローキーを押した時
 		if (Input.GetKey(KeyCode.RightArrow))
         {
-			if (pos_x < 2.0f)
+			if (pos_x < 5.0f)
             {
 				transform.position += new Vector3(slideSpeed, 0, 0) * Time.deltaTime;
             }
         }
 
+		//左アローキーを押した時
 		if (Input.GetKey(KeyCode.LeftArrow))
         {
-			if (pos_x > -2.0f)
+			if (pos_x > -5.0f)
             {
 				transform.position -= new Vector3(slideSpeed, 0, 0) * Time.deltaTime;
             }
         }
-
-		//左アローキーを押した時
-
-
-		//アニメーション
-	
 
 		//現在再生されているアニメーション情報を取得
 		var stateInfo = animator.GetCurrentAnimatorStateInfo(0);
@@ -85,9 +75,6 @@ public class Player : MonoBehaviour
 			jumpCount--;
         }
 
-		//スライディングしていたら頭の判定をなくす
-		
-
 		//落下時のGameOver判定
 
 
@@ -96,13 +83,11 @@ public class Player : MonoBehaviour
         {
 			count += Time.deltaTime;
 			//Debug.Log(count);
-			if(count >= 3)
+			if(count >= 5)
             {
 				count = 0;
 				running = false;
-				playerSpeed = 10f;
-
-				//Invoke("SpeedModosu", 5);
+				playerSpeed = 25f;
             }
         }
 		else
@@ -111,6 +96,7 @@ public class Player : MonoBehaviour
         }
 	}
 
+	//スピードを戻す
 	void SpeedModosu()
     {
 		speed = playerSpeed;
@@ -134,7 +120,7 @@ public class Player : MonoBehaviour
 			transform.LookAt(lockpos);
 
 			//アニメーション
-			animator.SetBool("Win", true);
+			//animator.SetBool("Win", true);
 
 			//UIの表示
 			uiscript.Goal();
@@ -142,24 +128,22 @@ public class Player : MonoBehaviour
 		}
 	}
 
+	//DustBoxに当たったら止まる
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "DustBox")
         {
-
 			playerSpeed = 0;
 			slideSpeed = 0;
 
 			animator.SetBool("Dead", true);
 			uiscript.Gameover();
-
         }
 
+		//ジャンプの数
 		if (collision.gameObject.tag == "Ground")
         {
 			jumpCount = defaultJumpCount;
         }
     }
-    
-
 }

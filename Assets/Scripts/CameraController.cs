@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
 {
     GameObject target;
     bool gameOver;
+
     // Start is called before the first frame update
     void Start()
     {
