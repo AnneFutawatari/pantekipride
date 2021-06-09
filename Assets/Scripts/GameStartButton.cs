@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameStartButton : MonoBehaviour
+namespace SelectCharacter
 {
-    // Start is called before the first frame update
-    void Start()
+    public class GameStartButton : MonoBehaviour
     {
-        
-    }
+        private SceneTransition sceneTransition;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Start is called before the first frame update
+        private void Start()
+        {
+            sceneTransition = FindObjectOfType<SceneTransition>();
+        }
+
+        public void OnGameStart()
+        {
+            sceneTransition.GameStart();
+        }
     }
 }
