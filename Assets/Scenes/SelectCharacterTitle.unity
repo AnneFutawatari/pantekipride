@@ -430,7 +430,6 @@ GameObject:
   - component: {fileID: 1227343568}
   - component: {fileID: 1227343567}
   - component: {fileID: 1227343566}
-  - component: {fileID: 1227343565}
   m_Layer: 5
   m_Name: Stage2
   m_TagString: Untagged
@@ -458,18 +457,6 @@ RectTransform:
   m_AnchoredPosition: {x: 211, y: -163}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1227343565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227343563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e65b1a6a7c3d48a2aa72285ad58481b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1227343566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,16 +501,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1227343565}
-        m_TargetAssemblyTypeName: StartToScene, Assembly-CSharp
-        m_MethodName: OnClickStartButton
-        m_Mode: 1
+      - m_Target: {fileID: 1172690638}
+        m_TargetAssemblyTypeName: SelectCharacter.SceneTransition, Assembly-CSharp
+        m_MethodName: GoToOtherScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: SelectCharacterStage_2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1227343567
@@ -829,16 +816,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1172690635}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1172690638}
+        m_TargetAssemblyTypeName: SelectCharacter.SceneTransition, Assembly-CSharp
+        m_MethodName: GoToOtherScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: SelectCharacterStage_1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1443264957

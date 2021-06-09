@@ -20,5 +20,10 @@ namespace SelectCharacter
             myGameManagerData.SetNextSceneName(stage);
             SceneManager.LoadScene("SelectCharacter");
         }
+
+        public void GameStart()
+        {
+            SceneManager.LoadScene(myGameManagerData.GetNextSceneName());
+        }
     }
 }
