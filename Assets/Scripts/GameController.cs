@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            timerText.text = "廃棄";
+            timerText.text = "GameOver";
         }
     }
 }

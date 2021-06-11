@@ -58,10 +58,10 @@ public class Player : MonoBehaviour
         }
 
 		//現在再生されているアニメーション情報を取得
-		var stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+		//var stateInfo = animator.GetCurrentAnimatorStateInfo(0);
 		//取得したアニメーションの名前が一致指定ればtrue
-		bool isJump = stateInfo.IsName("Base Layer.Jump");
-		bool isSlide = stateInfo.IsName("Base Layer.Slide");
+		//bool isJump = stateInfo.IsName("Base Layer.Jump");
+		//bool isSlide = stateInfo.IsName("Base Layer.Slide");
 
 		//ジャンプ
 		if (Input.GetKeyDown(KeyCode.UpArrow) && jumpCount > 0)
@@ -79,28 +79,28 @@ public class Player : MonoBehaviour
 
 
 		//○秒後から速度UPする
-		if(running == true)
-        {
-			count += Time.deltaTime;
+		//if(running == true)
+        //{
+			//count += Time.deltaTime;
 			//Debug.Log(count);
-			if(count >= 5)
-            {
-				count = 0;
-				running = false;
-				playerSpeed = 25f;
-            }
-        }
-		else
-        {
-			count = 0;
-        }
+			//if(count >= 5)
+            //{
+				//count = 0;
+				//running = false;
+				//playerSpeed = 25f;
+            //}
+        //}
+		//else
+        //{
+			//count = 0;
+        //}
 	}
 
 	//スピードを戻す
-	void SpeedModosu()
-    {
-		speed = playerSpeed;
-    }
+	//void SpeedModosu()
+    //{
+		//speed = playerSpeed;
+    //}
 
 	// Triggerである障害物にぶつかったとき
 	void OnTriggerEnter(Collider colider)
