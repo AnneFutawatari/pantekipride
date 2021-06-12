@@ -4,16 +4,16 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    bool running;
+    //bool running;
 	float speed;
 	private float count;
 	public float playerSpeed = 10.0f;
 	public float slideSpeed = 10.0f;
 	public int jumpCount = 1;
-	int defaultJumpCount;
+	int defaultJumpCount = 2;
 
 	//アニメーション
-	Animator animator;
+	//Animator animator;
 	//UIを管理するスクリプト
 	UIManager uiscript;
 
@@ -21,14 +21,14 @@ public class Player : MonoBehaviour
 
     void Start()
 	{
-		running = true;
+		//running = true;
 
 		//変数に必要なデータを格納
-		animator = GetComponent<Animator>();
+		//animator = GetComponent<Animator>();
 		uiscript = GameObject.Find("Canvas").GetComponent<UIManager>();
 		rig = GetComponent<Rigidbody>();
 
-		defaultJumpCount = jumpCount;
+		//defaultJumpCount = jumpCount;
 	}
 
 	void Update()
@@ -66,8 +66,8 @@ public class Player : MonoBehaviour
 		//ジャンプ
 		if (Input.GetKeyDown(KeyCode.UpArrow) && jumpCount > 0)
         {
-	
-
+			Debug.Log("!");
+			rig = GetComponent<Rigidbody>();
 			rig.AddForce(new Vector3(0, 6, 0), ForceMode.Impulse);
 
 			//animator.SetTrigger("Jump");
@@ -116,7 +116,7 @@ public class Player : MonoBehaviour
 			playerSpeed = 0;
 			slideSpeed = 0;
 
-			animator.SetBool("Dead", true);
+			//animator.SetBool("Dead", true);
 			uiscript.Gameover();
         }
 

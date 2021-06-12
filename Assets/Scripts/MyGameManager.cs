@@ -9,7 +9,7 @@ namespace SelectCharacter
         private static MyGameManager myGameManager;
 
         [SerializeField]
-        private MyGameManagerData myGameManagerData = null;
+        private MyGameManagerData myGameManagerData;
 
         private void Awake()
         {

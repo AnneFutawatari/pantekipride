@@ -1714,7 +1714,7 @@ MonoBehaviour:
         m_MethodName: OnSelectCharacter
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4177874944587230939, guid: 928d26e205f764a56a6c6c6931435b91, type: 3}
+          m_ObjectArgument: {fileID: 2513173027383800721, guid: 709a384f80700434ab1cc7752a150f22, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0

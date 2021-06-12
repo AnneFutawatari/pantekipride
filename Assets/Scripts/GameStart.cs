@@ -6,6 +6,7 @@ namespace SelectCharacter
 {
     public class GameStart : MonoBehaviour
     {
+     
         private MyGameManagerData myGameManagerData;
 
         // Start is called before the first frame update
