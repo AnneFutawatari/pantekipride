@@ -772,7 +772,7 @@ MonoBehaviour:
         m_MethodName: OnSelectCharacter
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1872547006494550, guid: 450f6d2399809488dab3e957dfe78299, type: 3}
+          m_ObjectArgument: {fileID: 5196227752673258953, guid: 10d05853e664b4ccabf1b90f01fa5e5f, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -916,7 +916,7 @@ MonoBehaviour:
         m_MethodName: OnSelectCharacter
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1367565697918178, guid: 7d5280139859a4641a73df6dda2b91ec, type: 3}
+          m_ObjectArgument: {fileID: 7010676161929050756, guid: 27b3a749ae3a74f059df69bb64fad72f, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1714,7 +1714,7 @@ MonoBehaviour:
         m_MethodName: OnSelectCharacter
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1080854471979460, guid: 0683ba921c1a542ea8dae92b271c1e18, type: 3}
+          m_ObjectArgument: {fileID: 2513173027383800721, guid: 709a384f80700434ab1cc7752a150f22, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0

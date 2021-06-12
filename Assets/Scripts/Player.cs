@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-	bool running;
+    bool running;
 	float speed;
 	private float count;
-	public float playerSpeed = 25.0f;
-	public float slideSpeed = 25.0f;
+	public float playerSpeed = 10.0f;
+	public float slideSpeed = 10.0f;
 	public int jumpCount = 1;
 	int defaultJumpCount;
 
@@ -74,26 +74,6 @@ public class Player : MonoBehaviour
 
 			jumpCount--;
         }
-
-		//落下時のGameOver判定
-
-
-		//○秒後から速度UPする
-		//if(running == true)
-        //{
-			//count += Time.deltaTime;
-			//Debug.Log(count);
-			//if(count >= 5)
-            //{
-				//count = 0;
-				//running = false;
-				//playerSpeed = 25f;
-            //}
-        //}
-		//else
-        //{
-			//count = 0;
-        //}
 	}
 
 	//スピードを戻す

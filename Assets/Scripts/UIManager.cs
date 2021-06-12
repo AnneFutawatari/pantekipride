@@ -4,7 +4,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
-	
+
+	string SelectCharacterTitle;
+	string SelectCharacterStage1;
 	public Text gameovertext;
 	Canvas canvas;
 	CameraController cameraController;
@@ -13,10 +15,8 @@ public class UIManager : MonoBehaviour {
 		canvas = GetComponent<Canvas> ();
 		canvas.enabled = false;
 		cameraController = GameObject.Find("Main Camera").GetComponent<CameraController>();
-	}
-
-	void Update () {
-	
+		SelectCharacterTitle = SceneManager.GetActiveScene().name;
+		SelectCharacterStage1 = SceneManager.GetActiveScene().name;
 	}
 
 	//Gameoverになった時の表示
@@ -26,8 +26,9 @@ public class UIManager : MonoBehaviour {
 		cameraController.SetGameOver();
 	}
 
-	//Goalした時の表示
-	public void Goal(){
+    //Goalした時の表示
+    public void Goal()
+    {
 		gameovertext.text = "購入";
 		canvas.enabled = true;
 	}
@@ -35,12 +36,12 @@ public class UIManager : MonoBehaviour {
 	//リトライを押した時の画面遷移
 	public void Retry()
 	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-	}
+		SceneManager.LoadScene("SelectCharacterStage1");
+    }
 
 	//タイトルを押した時の画面遷移
-	public void BackTitke()
+	public void BackTitle()
 	{
-		SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("SelectCharacterTitle");
 	}
 }
