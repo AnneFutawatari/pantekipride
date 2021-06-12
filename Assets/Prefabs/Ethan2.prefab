@@ -128,4 +128,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 10
   slideSpeed: 10
-  jumpCount: 1
+  jumpCount: 2
