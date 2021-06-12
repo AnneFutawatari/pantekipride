@@ -66,11 +66,11 @@ public class Player : MonoBehaviour
 		//ジャンプ
 		if (Input.GetKeyDown(KeyCode.UpArrow) && jumpCount > 0)
         {
-			rig.velocity = new Vector3(0, 0, 0);
+	
 
 			rig.AddForce(new Vector3(0, 6, 0), ForceMode.Impulse);
 
-			animator.SetTrigger("Jump");
+			//animator.SetTrigger("Jump");
 
 			jumpCount--;
         }
