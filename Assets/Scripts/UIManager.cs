@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour {
 	public void Gameover(){
 		gameovertext.text = "廃棄";
 		canvas.enabled = true;
-		cameraController.SetGameOver();
+		//cameraController.SetGameOver();
 	}
 
     //Goalした時の表示
@@ -33,15 +33,11 @@ public class UIManager : MonoBehaviour {
 		canvas.enabled = true;
 	}
 
-	//リトライを押した時の画面遷移
-	public void Retry()
-	{
-		SceneManager.LoadScene("SelectCharacterStage1");
-    }
-
 	//タイトルを押した時の画面遷移
 	public void BackTitle()
 	{
-        SceneManager.LoadScene("SelectCharacterTitle");
+		Debug.Log("success");
+		//SceneManager.LoadScene("SelectCharacterTitle");
+		UnityEngine.SceneManagement.SceneManager.LoadScene("SelectCharacterTitle");
 	}
 }
