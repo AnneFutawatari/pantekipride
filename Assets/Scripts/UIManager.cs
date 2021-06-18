@@ -33,11 +33,8 @@ public class UIManager : MonoBehaviour {
 		canvas.enabled = true;
 	}
 
-	//タイトルを押した時の画面遷移
 	public void BackTitle()
-	{
-		Debug.Log("success");
-		//SceneManager.LoadScene("SelectCharacterTitle");
-		UnityEngine.SceneManagement.SceneManager.LoadScene("SelectCharacterTitle");
-	}
+    {
+		SceneManager.LoadScene("SelectCharacterTitle");
+    }
 }
